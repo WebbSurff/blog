@@ -1,0 +1,234 @@
+.payment {
+    text-align: center;
+    padding: 100px 0 53px;
+    background: linear-gradient(135deg, #3D4251 0%, #272B35 100%);
+
+    @include m($lg) {
+        padding: 60px 0 40px;
+    }
+
+    @include hl {
+        padding: 30px 0 15px;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 48px;
+        letter-spacing: -0.5px;
+        color: #fff;
+        margin-bottom: 40px;
+        line-height: 1.33;
+
+        @include m($lg) {
+            font-size: 32px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 45px;
+
+        @include m($md) {
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__item {
+        flex: 0 1 385px;
+        padding: 49px 76px 40px 90px;
+        background-color: #FFFFFF;
+        border: 1px solid #EBECED;
+        border-radius: 6px;
+        filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.501961));
+
+        @include m($xl) {
+            padding: 20px;
+        }
+
+        @include m($lg) {
+            padding: 13px;
+        }
+
+        &--best-offer {
+            padding: 59px 0;
+            border: 4px solid $mainColor;
+
+            @include m($xl) {
+                padding: 40px 0;
+            }
+
+            @include m($lg) {
+                padding: 24px 0;
+            }
+
+            @include m($md) {
+                border-color: #FF8D00;
+
+                .payment__btn {
+                    border-color: #FF8D00;
+                    background: #FF8D00;
+                }
+            }
+        }
+
+        @include m($md) {
+            padding: 39px 55px;
+            flex: 0 0 315px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+
+            @include m($md) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+        }
+
+
+    }
+
+    &__subtile {
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: $black-800;
+        margin-bottom: 17px;
+        line-height: 1.3;
+        position: relative;
+        padding-bottom: 17px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 2px;
+            width: 24px;
+            background-color: $mainColor;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 18px;
+        position: relative;
+        margin-bottom: 27px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 200px;
+            background-color: #EBECED;
+        }
+
+        .currency {
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 1.6;
+            color: $black-900;
+        }
+    }
+
+    &__price {
+        font-weight: 300;
+        font-size: 56px;
+        letter-spacing: -1.5px;
+        color: $black-900;
+        line-height: 1;
+    }
+
+    &__month {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 1.5;
+        color: $black-900;
+        align-self: flex-end;
+    }
+
+    &__info {
+        margin-bottom: 30px;
+        color: $black-800;
+    }
+
+    &__economy {
+        margin-bottom: 25px;
+    }
+
+    &__old-price {
+        text-decoration-line: line-through;
+        color: #F24458;
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    &__new-price {
+        color: $black-800;
+    }
+
+    &__save {
+        font-weight: 700;
+        display: block;
+        color: $black-800;
+    }
+
+    &__btn {
+        padding: 11px 72px;
+        display: inline-block;
+    }
+
+    &__transition {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__transition-item {
+        &:not(:last-child) {
+            margin-right: 28px;
+
+            @include m($sm) {
+                margin-bottom: 34px;
+            }
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        color: $mainColor;
+        letter-spacing: 0.8px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 17px;
+        }
+
+        svg {
+            fill: $mainColor;
+            transition: fill 0.3s, transform 0.3s;
+        }
+
+        &:hover {
+            color: #fff;
+
+            svg {
+                fill: #fff;
+                transform: translateX(5px);
+            }
+        }
+    }
+
+}
+
+// method-payment in parts

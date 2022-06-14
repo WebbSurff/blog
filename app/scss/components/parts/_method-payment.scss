@@ -1,0 +1,43 @@
+.method-payment {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include m($lg) {
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 18px;
+        color: #fff;
+        margin-right: 30px;
+
+        @include m($lg) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        @include m($lg) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+}

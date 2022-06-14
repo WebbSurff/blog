@@ -1,0 +1,99 @@
+.resent-post {
+    flex: 0 1 64.8%;
+    position: relative;
+    padding-right: 20px;
+    margin-right: 6%;
+    text-align: center;
+
+    @include m($lg) {
+        margin-right: 2%;
+    }
+
+    @include m($sm) {
+        flex: auto;
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 60px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background-color: #EBECED;
+
+        @include m($md) {
+            display: none;
+        }
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 40px;
+        font-size: 32px;
+
+    }
+
+    &__list {
+        margin-bottom: 34px;
+
+        @include m($sm) {
+            margin-bottom: 86px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        text-align: left;
+        padding-bottom: 38px;
+
+        @include m($sm) {
+            padding-bottom: 24px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #EBECED;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+
+            @include m($sm) {
+                margin-bottom: 25px;
+            }
+        }
+
+        @include m($lg) {
+            &:nth-child(n+4) {
+                display: none;
+            }
+        }
+
+        @include hl {
+            &:nth-child(n+4) {
+                display: none;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 11px 84px;
+
+        @include m($lg) {
+            padding: 11px 67px;
+        }
+
+        @include m($sm) {
+            width: 100%;
+        }
+    }
+}

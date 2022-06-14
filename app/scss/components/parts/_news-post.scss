@@ -1,0 +1,197 @@
+.news-post {
+    display: flex;
+
+    @include m($lg) {
+        flex-direction: column;
+    }
+
+    &__link-img {
+        margin-right: 40px;
+        flex: 0 0 280px;
+
+        &--main {
+            margin-right: 60px;
+            flex: 0 0 600px;
+
+            @include m($xl) {
+                margin-right: 30px;
+            }
+
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        @include m($lg) {
+            flex: auto;
+            margin-right: 0;
+            margin-bottom: 26px;
+        }
+
+        @include hl {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+
+        @include m($lg) {
+            width: 100%;
+            height: 220px;
+        }
+
+        @include hl {
+            height: 220px;
+        }
+
+        @include m($md) {
+            height: 200px;
+        }
+
+        &--main {
+            @include m($lg) {
+                width: 100%;
+                height: 320px;
+            }
+
+            @include m($md) {
+                height: 223px;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link-title {
+        margin-bottom: 6px;
+
+        &:hover {
+            .news-post__title {
+                color: $mainColor;
+            }
+        }
+
+        &--main {
+            margin-bottom: auto;
+
+            @include m($lg) {
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+
+    &__title {
+        @include m($sm) {
+            span {
+                display: block;
+            }
+        }
+
+        // это сделано толькно из за pixel-perfect все margin разные ,а в этом месте текс перенесен не корректно
+
+    }
+
+    &__data {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    &__author {
+        color: $black-800;
+        margin-right: 17px;
+
+        &:hover {
+            color: $mainColor;
+        }
+    }
+
+    &__date {
+        position: relative;
+        padding-left: 5px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 12px;
+            width: 1px;
+            background-color: $gray-100;
+            left: -4px;
+            top: 7px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 7px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 5px;
+            position: relative;
+
+            &::after {
+                content: ',';
+                position: absolute;
+                bottom: 0;
+                right: -2px;
+                color: $mainColor;
+                transition: color 0.3s;
+            }
+        }
+
+        &:hover {
+            .news-post__tags {
+                color: $black-900;
+            }
+
+            &::after {
+                color: $black-900;
+            }
+        }
+
+    }
+
+    &__tags {
+        color: $mainColor;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        line-height: 1.33;
+
+        &:focus {
+            outline-offset: 2px;
+        }
+
+    }
+
+    &__comment {
+        padding-left: 28px;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: center left;
+        background-image: url('../images/comment.svg');
+
+        &:hover {
+            .news-post__commnet-qty {
+                color: $mainColor;
+            }
+        }
+
+        @include m($sm) {
+            background-size: 22px 22px;
+        }
+    }
+
+    &__commnet-qty {
+        transition: color 0.3s;
+    }
+}

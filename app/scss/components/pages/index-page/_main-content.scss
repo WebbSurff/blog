@@ -1,0 +1,12 @@
+.main-content {
+    margin-bottom: 73px;
+
+    &__wrap {
+        display: flex;
+
+        @include m($sm) {
+            flex-direction: column;
+            padding: 0 15px;
+        }
+    }
+}

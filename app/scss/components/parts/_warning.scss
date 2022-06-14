@@ -1,0 +1,133 @@
+.warning {
+    padding: 10px 16px 8px;
+    background-color: $black-900;
+    position: relative;
+    transition: transform 0.3s, opacity 0.1s, visibility 0.3s, height 0.2s, padding 0.4s;
+
+    @include m($md) {
+        padding: 14px 10px 8px 20px;
+    }
+
+    &.remove {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        padding: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+
+        @include m($md) {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        font-size: 12px;
+        line-height: 1.33;
+
+        @include m($md) {
+            margin: 0;
+            max-width: 100%;
+            width: 100%;
+            display: block;
+            margin-right: 30px;
+        }
+
+        @include m($sm) {
+            margin-right: 4px;
+        }
+    }
+
+    &__box {
+        margin-right: 32px;
+
+        @include m($md) {
+            margin-right: auto;
+            display: flex;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 30px;
+
+        @include m($md) {
+            margin-right: 0;
+        }
+    }
+
+
+    &__notification {
+        font-weight: 700;
+        color: #FF8D00;
+        position: relative;
+        padding-left: 28px;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center left;
+        background-image: url('../images/alert.svg');
+
+        @include m($md) {
+            margin-right: auto;
+        }
+    }
+
+    &__ip {
+        display: inline-block;
+        margin-right: 30px;
+
+        @include m($md) {
+            margin-right: auto;
+            padding-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__link {
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.33;
+
+        @include m($sm) {
+            padding-right: 10px;
+        }
+
+        &:hover {
+            color: $mainColor;
+        }
+    }
+
+    &__close {
+        justify-self: flex-end;
+        height: 24px;
+
+        @include m($md) {
+            position: relative;
+            top: -6px;
+        }
+
+        svg {
+            fill: $gray-100;
+            transition: fill 0.3s;
+        }
+
+        &:hover {
+            svg {
+                fill: $mainColor;
+            }
+        }
+    }
+}
+
+// in components / parts

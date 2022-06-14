@@ -1,0 +1,9 @@
+.logo {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+
+    @include m($xs) {
+        font-size: 16px;
+    }
+}

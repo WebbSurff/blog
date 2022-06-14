@@ -1,0 +1,116 @@
+.header {
+    margin-bottom: 15px;
+
+    @include m($sm) {
+        margin-bottom: 36px;
+    }
+
+    &__wrapper {
+        padding: 43px 15px 20px;
+        max-width: 1370px;
+        margin: 0 51px 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m($xl) {
+            margin: 0 auto;
+        }
+
+        @include m($lg) {
+            justify-content: unset;
+        }
+
+        @include m($md) {
+            padding: 23px 10px 15px 12px;
+        }
+
+        @include hl {
+            padding: 10px 15px 20px;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        @include m($lg) {
+            display: flex;
+            margin-right: 24px;
+            align-items: center;
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 27px;
+            z-index: 10;
+        }
+
+    }
+
+    &__burger-line {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $black-900;
+        transition-duration: .25s;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $black-900;
+            transition-duration: .25s;
+        }
+
+        &::before {
+            top: -8px;
+        }
+
+        &::after {
+            top: 8px;
+        }
+
+        &.active {
+            transform: rotate(45deg);
+
+            &::before {
+                top: -8px;
+                top: 0;
+                transform: rotate(0);
+            }
+
+            &::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__logo {
+        @include m($lg) {
+            margin-right: auto;
+        }
+    }
+
+    &__btn {
+        margin-right: 4px;
+
+        @include m($sm) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__link,
+    &__btn {
+        &:focus {
+            outline-offset: 2px;
+        }
+    }
+}
+
+// menu and warning at components/parts

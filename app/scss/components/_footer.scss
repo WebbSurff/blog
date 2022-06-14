@@ -1,0 +1,179 @@
+.footer {
+    padding: 84px 0 90px;
+
+    @include hl {
+        padding: 49px 0 50px;
+    }
+
+    @include m($sm) {
+        padding: 49px 0 50px;
+    }
+
+    &__logo {
+        margin-bottom: 58px;
+        font-size: 27px;
+        display: inline-block;
+
+        @include m($md) {
+            font-size: 18px;
+        }
+
+        @include hl {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        @include m($sm) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+        display: flex;
+
+        @include m($lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 0.13;
+        font-weight: 500;
+        margin-bottom: 27px;
+        color: $black-800;
+    }
+
+    &__info {
+        flex: 0 1 617px;
+
+        @include m($lg) {
+            flex: auto;
+        }
+    }
+
+    &__text {
+        margin-bottom: 50px;
+        max-width: 594px;
+
+        @include m($lg) {
+            max-width: 100%;
+        }
+
+        @include m($sm) {
+            margin-bottom: 0;
+        }
+
+        p {
+            &:not(:first-child) {
+                font-size: 12px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__social-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__social-item {
+        &:not(:last-child) {
+            margin-right: 30px;
+
+            @include m($sm) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__social-link {
+        display: block;
+
+        svg {
+            fill: $black-800;
+            transition: fill 0.3s, transform 0.3s;
+        }
+
+        &:hover {
+            svg {
+                fill: $mainColor;
+                transform: scale(1.1);
+            }
+        }
+
+        @include m($sm) {
+            padding: 5px 18px 5px 0;
+        }
+    }
+}
+
+
+.nav-footer {
+    margin-right: auto;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 77px);
+    gap: 81px 54px;
+
+    @include m($lg) {
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    @include hl {
+        grid-template-rows: repeat(3, 48px);
+    }
+
+    @include m($sm) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        gap: 81px 15px;
+        margin-bottom: 90px;
+    }
+
+    &__links {
+        &:nth-child(3) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            @include m($sm) {
+                grid-column-start: 2;
+                grid-column-end: 2;
+            }
+        }
+
+        &:nth-child(4) {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+            @include m($sm) {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 4;
+                grid-row-end: 3;
+            }
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__link {
+        &:hover {
+            color: $mainColor;
+        }
+    }
+}
